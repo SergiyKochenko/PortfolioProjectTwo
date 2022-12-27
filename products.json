@@ -47,14 +47,14 @@
       "fields":{
         "title":"Python Data Structures and Algorithms Full Course",
         "price": 99.99,
-        "image":{"fields":{"file":{"url":"images/Date.png"}}}
+        "image":{"fields":{"file":{"url":"images/Data.png"}}}
       }
     },{
       "sys": {"id":"8"},
       "fields":{
         "title":"Data Science Full Course",
         "price": 149.99,
-        "image":{"fields":{"file":{"url":"images/Python.png"}}}
+        "image":{"fields":{"file":{"url":"images/Data2.png"}}}
       }
     } 
   ]
