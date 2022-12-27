@@ -104,3 +104,34 @@ ul{
   left: 0;
   z-index: -1;
 }
+
+.section1 .banner{
+  height: 170px;
+  width: 600px;
+  background: rgba(255,255,255,0.7);
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  font-family: sans-serif;
+  z-index: 8;
+}
+
+.banner h1{
+  font-size: 2em;
+}
+
+.banner a{
+  display: flex;
+  justify-content: center;
+  padding: 1em 2.5em;
+  font-size: 0.8em;
+  color: white;
+  background: #02eeee;
+  transition: all 0.3s;
+}
