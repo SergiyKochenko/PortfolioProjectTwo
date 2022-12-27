@@ -135,3 +135,7 @@ ul{
   background: #02eeee;
   transition: all 0.3s;
 }
+
+.banner a:hover{
+  background: #163fc9;
+}
