@@ -28,3 +28,11 @@ closeCart.addEventListener("click",function(){
   const bodyOverlay = document.querySelector(".overlay")
   document.querySelector("body").removeChild(bodyOverlay)
 })
+
+burger.addEventListener("click",function(){
+  menuSidebar.style.transform = "translate(0%)"
+})
+
+closeMenu.addEventListener("click",function(){
+  menuSidebar.style.transform = "translate(-100%)"
+})
