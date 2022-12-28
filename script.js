@@ -10,3 +10,21 @@ const cartUi = document.querySelector(".cart-sidebar .cart")
 const totalDiv = document.querySelector(".total-sum")
 const clearBtn = document.querySelector(".clear-cart-btn")
 const cartContent = document.querySelector(".cart-content")
+
+let Cart=[];
+let buttonsDOM = [];
+
+cart.addEventListener("click",function(){
+  cartSideBar.style.transform = "translate(0%)"
+  const bodyOverlay = document.createElement("div")
+  bodyOverlay.classList.add("overlay");
+  setTimeout(function(){
+    document.querySelector("bady").append(bodyOverlay)
+  },300)
+})
+
+closeCart.addEventListener("click",function(){
+  cartSideBar.style.transform = "translate(100%)"
+  const bodyOverlay = document.querySelector(".overlay")
+  document.querySelector("body").removeChild(bodyOverlay)
+})
