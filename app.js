@@ -72,6 +72,7 @@ class UI{
     })
   }
 
+  
 getButtons(){
   const btn = document.querySelectorAll(".add-to-cart")
   Array.from(btns)
@@ -245,4 +246,31 @@ addCartItem(cartItem){
                    }
 }
 
+class Storage{
+  static saveProducts(products){
+    localStorage.setItem("products", JSON.stringify(products))
+  }
+  static getStorageProducts(id){
+    let products = JSON.parse(localStorage.getItem('products'))
+    return products.find((item)=>item.id===id)
+  }
+  static saveCart(Cart){
+    localStorage.setItem('Cart',JSON.stringify(Cart))
+  }
+  static getCart(){
+    return localStorage.getItem('Cart')? JSON.parse(localStorage.getItem("Cart")):[]
+  }
+}
 
+document.addEventListener("DOMContentLoaded",()=>{
+  const products = new Product();
+  const ui = new UI();
+  ui.setupApp()
+  products.getPoduct().then(products=>{
+    ui.displayProducts(products)
+    Storage.saveProducts(products)
+  }).then(()=>{
+    ui.getButtons();
+    ui.cartLogic();
+  })
+})
