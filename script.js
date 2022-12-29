@@ -195,6 +195,54 @@ addCartItem(cartItem){
                    }
                    reduceAmount(){
                      const reduceBtn = document.querySelectorAll(".reduce-amount")
+                     reduceBtn.forEach((btn)=>{
+                       btn.addEventListener("click",(event)=>{
+                         let id = (event.currentTarget.dataset.id)
+                         Cart.map((item)=>{
+                           if(item.id===id){
+                             item.amount--
+                             if(item.amount>0){
+                               Storage.saveCart(Cart)
+                               this.setCartValues(Cart)
+                               const amountUi = event.currentTarget.parentElement.children[1]
+                               amountUi.innerHTML = item.amount
+                             }else{
+                               event.currentTarget.parentElement.parentElement.parentElement.removeChild(event.currentTarget.parentElement.parentElement)
+                               this.removeItem(id)
+                               
+                             }
+                           }
+                         })
+                       })
+                     })
+                   }
+                   clearCart(){
+                     let cartItem = Cart.map(item=>item.id)
+                     cartItem.forEach((id)=>this.removeItem(id))
+                     const cartProduct = document.querySelectorAll(".cart-product")
+                     cartProduct.forEach((item)=>{
+                       if(item){
+                         item.parentElement.removeChild(item)
+                       }
+                     })
+                   }
+                   removeItem(id){
+                     Cart = Cart.filter((item)=>item.id!==id)
+                     this.setCartValues(Cart)
+                     Storage.saveCart(Cart)
+                     let button = this.getSingleButton(id)
+                     button.style.pointerEvents = "unset"
+                     button.innerHTML=`<i class= "fa fa-cart-plus"></i>Add To Cart`
+                   }
+                   getSingleButton(id){
+                     let btn
+                     buttonsDOM.forEach((button)=>{
+                       if(button.dataset.id == id){
+                         btn = button
+                       }
+                     })
+                     return btn
                    }
 }
+
 
