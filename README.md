@@ -115,4 +115,4 @@ This project is for educational purposes. You may use and modify it as you wish.
 
 ---
 
-*Created by [Your Name or Team], 2024.*
+*Created by Sergiy Kochenko, 2024.*
